@@ -1,6 +1,17 @@
 # n = number of copies to print
 # x = number of seconds what the first xerox need to print one copy
 # y = number of seconds what the second xerox need to print one copy
+"""
+Сегодня утром жюри решило добавить в вариант олимпиады еще одну, Очень Легкую Задачу. 
+Ответственный секретарь Оргкомитета напечатал ее условие в одном экземпляре, 
+и теперь ему нужно до начала олимпиады успеть сделать еще N копий. 
+В его распоряжении имеются два ксерокса, 
+один из которых копирует лист за х секунд, а другой – за y. 
+(Разрешается использовать как один ксерокс, так и оба одновременно. 
+Можно копировать не только с оригинала, но и с копии.) 
+Помогите ему выяснить, какое минимальное время для этого потребуется.
+https://contest.yandex.ru/contest/27844/problems/F/?success=51995675#30404/2018_10_28/gu8O6TpyEG
+"""
 
 def left_bin_search(left, right, check, checkparams):
     x, y = checkparams[1:]
