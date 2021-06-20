@@ -14,11 +14,7 @@ def check_defense(d, params):
 
 
 def main():
-    # n, a, b, w, h = list(map(int, input().split()))
-    n, a, b, w, h = 11, 3, 2, 21 ,25
-    # n, a, b, w, h = 1, 1, 1, 1, 1
-    # n, a, b, w, h = 1, 1, 1, 3, 3
-    # n, a, b, w, h = 1, 1, 1, 1000, 1
+    n, a, b, w, h = list(map(int, input().split()))
     left = 0
     right = min(w, h)
     print(right_bin_search(0, right, check_defense, (n, a, b, w, h)))
@@ -50,8 +46,6 @@ def tests(algo):
 
 if __name__ == "__main__":
     main()
-    # tests(right_bin_search)
-
 
 # if You want to launch the test,
 # replace "main()" by "tests(left_bin_search)" in the last line
