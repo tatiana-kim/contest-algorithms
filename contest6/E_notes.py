@@ -30,7 +30,7 @@ def main():
     print(left_bin_search(left, right, check_note, (a, b, c)))
 
 
-# for output in file
+# same as main but output in file
 def main_file():
     a, b, c = [float(input()) for i in range(3)]
     left = 0
