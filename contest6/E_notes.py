@@ -41,10 +41,29 @@ def main_file():
     f.close()
 
 
+def tests(algo):
+    a, b, c = 2, 0, 0
+    right = (a + b + c) + 1
+    assert algo(0, right, check_note, (a, b, c)) == 2, "WA :("
+    print("Test 1: Ok")
+
+    a, b, c = 1000000000000000, 1000000000000000, 1000000000000000
+    right = (a + b + c) + 1
+    assert algo(0, right, check_note, (a, b, c)) == 1000000000000000, "WA :("
+    print("Test 2: Ok")
+
+    a, b, c = 1000000000000000, 1000000000000000, 0
+    right = (a + b + c) + 1
+    assert algo(0, right, check_note, (a, b, c)) == 1333333333333334, "WA :("
+    print("Test 3: Ok")
+
+
 if __name__ == "__main__":
     main()
 
-"""
-right = (a + b + c)  # half of all any notes must be "5" (for worst case)
+
+# if You want to launch the test,
+# replace "main()" by "tests(left_bin_search)" in the last line
+
+# right = (a + b + c)  # half of all any notes must be "5" (for worst case)
 # in other word the number of "5" must be at least the number of all received notes
-"""
