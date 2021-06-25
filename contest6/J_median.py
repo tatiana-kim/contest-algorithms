@@ -63,7 +63,6 @@ def tests(algo):
 
 
 if __name__ == "__main__":
-    # main()
-    tests(binary)
+    main()
 
 # replace main() by # tests(binary) call in order to start the tests
