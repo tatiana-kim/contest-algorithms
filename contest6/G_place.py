@@ -15,15 +15,8 @@ def checkwalkway(largeur, params):
 
 def main():
     n, m, t = [int(input()) for i in range(3)]
-    # n, m, t = 6, 7, 38  # 2
-    # n, m, t = 5, 20, 46  # 1
-    # n, m, t = 20, 10, 144  # 3
-    # n, m, t = 50, 50, 899  # 4
-    # n, m, t = 50, 50, 900  # 5 (not here?)
-    # n, m, t = 1600000000, 1450000000, 2310000003500000805  # answer: 700000007 (test 17)
-    # n, m, t = 500, 1000, 100  # answer: 0 (test 13)
     l = 0
-    r = (min(n, m) // 2)
+    r = min(n, m) // 2
     print(right_bin_search(l, r, checkwalkway, (n, m, t)))
 
 
@@ -34,6 +27,41 @@ def main_infile():
     print(answer)
     f.close()
 
+
+def tests(algo):
+    l = 0
+
+    n, m, t = 6, 7, 38  # 2
+    r = min(n, m) // 2
+    algo(l, r, checkwalkway, (n, m, t)) == 2, "WA :("
+
+    n, m, t = 5, 20, 46  # 1
+    r = min(n, m) // 2
+    algo(l, r, checkwalkway, (n, m, t)) == 1, "WA :("
+
+    n, m, t = 20, 10, 144  # 3
+    r = min(n, m) // 2
+    algo(l, r, checkwalkway, (n, m, t)) == 3, "WA :("
+
+    n, m, t = 50, 50, 899  # 4
+    r = min(n, m) // 2
+    algo(l, r, checkwalkway, (n, m, t)) == 4, "WA :("
+
+    n, m, t = 50, 50, 900  # 5 (not here?)
+    r = min(n, m) // 2
+    algo(l, r, checkwalkway, (n, m, t)) == 5, "WA :("
+
+    n, m, t = 500, 1000, 100  # (test 13)
+    r = min(n, m) // 2
+    algo(l, r, checkwalkway, (n, m, t)) == 0, "WA :("
+
+    n, m, t = 1600000000, 1450000000, 2310000003500000805  # (test 17)
+    r = min(n, m) // 2
+    algo(l, r, checkwalkway, (n, m, t)) == 700000007, "WA :("
+
+
 if __name__ == "__main__":
     main()
-    # main_infile()
+
+# if you want read input from file: replace main() call by main_infile() call
+# if you want launch tests replace main() by tests(right_bin_search)
