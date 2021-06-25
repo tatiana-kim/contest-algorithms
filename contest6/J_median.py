@@ -1,3 +1,5 @@
+# idea: https://russianblogs.com/article/1097436754/
+
 def binary(a, b, n):
     lefta = leftb = 0
     righta = rightb = n - 1
@@ -9,7 +11,7 @@ def binary(a, b, n):
         return s[1]
 
     while ((righta - lefta) + 1) > 2:
-        # find median for a and median b
+        # find median of a and median of b
         # if length of list is even:
         length = (righta - lefta) + 1
         if length % 2 == 0:
@@ -26,7 +28,6 @@ def binary(a, b, n):
         else:
             lefta = ma
             rightb = mb
-
 
     s = sorted(a[lefta: righta+1] + b[leftb: rightb+1])
     return s[1]
@@ -49,9 +50,7 @@ def tests(algo):
     n, l = [int(i) for i in next(f).strip().split()]
     lines = f.readlines()
     arr = []
-    for line in lines:
-        arr.append([int(i) for i in line.strip().split()])
-    # arr = [[int(i) for i in line.strip().split()] for line in lines]
+    arr = [[int(i) for i in line.strip().split()] for line in lines]
     f.close()
     
     answer = []
@@ -64,5 +63,7 @@ def tests(algo):
 
 
 if __name__ == "__main__":
-    main()
-    # tests(binary)
+    # main()
+    tests(binary)
+
+# replace main() by # tests(binary) call in order to start the tests
