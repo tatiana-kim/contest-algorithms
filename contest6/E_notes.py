@@ -1,5 +1,6 @@
+# about float unpresision
+# https://qastack.ru/programming/21895756/why-are-floating-point-numbers-inaccurate
 from decimal import Decimal, getcontext
-
 getcontext().prec = 20
 
 
@@ -19,7 +20,6 @@ def left_bin_search(left, right, check, checkparams):
 def check_note(x, params):
     a, b, c = params
     note = Decimal(2*a + 3*b + 4*c + 5.0*x) / Decimal(a + b + c + x)
-    # note = ceil(note) if note * 10 % 10 >= 5 else round(note)  # ; return note >= 4
     return note >= 3.5
 
 
@@ -65,5 +65,5 @@ if __name__ == "__main__":
 # if You want to launch the test,
 # replace "main()" by "tests(left_bin_search)" in the last line
 
-# right = (a + b + c)  # half of all any notes must be "5" (for worst case)
+# right = (a + b + c) because half of all any notes must be "5" (for worst case)
 # in other word the number of "5" must be at least the number of all received notes
