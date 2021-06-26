@@ -1,27 +1,16 @@
-# idea: https://russianblogs.com/article/1097436754/
-
 def binary(a, b, n):
     lefta = leftb = 0
     righta = rightb = n - 1
 
     if n == 1:
         return min(a[0], b[0])
-    if n == 2:
-        s = sorted(a + b)
-        return s[1]
 
     while ((righta - lefta) + 1) > 2:
-        # find median of a and median of b
-        # if length of list is even:
         length = (righta - lefta) + 1
+        ma = (lefta + righta) // 2
+        mb = (leftb + rightb) // 2
         if length % 2 == 0:
-            ma = (lefta + righta) // 2
-            mb = (leftb + rightb) // 2 + 1
-        # if odd:
-        else:
-            ma = (lefta + righta) // 2
-            mb = (leftb + rightb) // 2
-        #
+            mb += 1
         if a[ma] > b[mb]:
             righta = ma
             leftb = mb
@@ -33,16 +22,13 @@ def binary(a, b, n):
     return s[1]
 
 
-def permutate(arr, n, l):
-    for i in range(n):
-        for j in range(i+1, n):
-            print(binary(arr[i], arr[j], l))
-
-
 def main():
     n, l = map(int, input().split())
     arr = [list(map(int, input().split())) for i in range(n)]
-    permutate(arr, n, l)
+
+    for i in range(n):
+        for j in range(i+1, n):
+            print(binary(arr[i], arr[j], l))
 
 
 def tests(algo):
