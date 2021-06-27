@@ -24,4 +24,17 @@ def main():
     r = 10 ** 7  # (макс допустимое значение длины провода)
     print(right_bin_search(l, r, checklength, (arr, k)))
 
-main()
+
+def test(algo):
+	n, k = 4, 11
+	arr = [802, 743, 457, 539]
+	l = 0
+	r = 10 ** 7
+	assert algo(l, r, checklength, (arr, k)) == 200, "WA :("
+	print("Test 1: Ok")
+
+
+if __name__ == "__main__":
+	main()
+
+# to launch test replace main() call by test(right_bin_search)
