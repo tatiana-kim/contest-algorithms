@@ -8,7 +8,6 @@
 Формат вывода
 Выведите ответ на задачу.
 """
-
 def greater_than_neighb(seq):
     n = len(seq)
     count = 0
@@ -19,6 +18,12 @@ def greater_than_neighb(seq):
     return count
 
 
+def tests(algo):
+    assert algo([1, 2, 3, 4, 5]) == 0, "WA :("
+    assert algo([5, 4, 3, 2, 1]) == 0, "WA :("
+    assert algo([1, 5, 1, 5, 1]) == 2, "WA :("
+
+
 def main():
     seq1 = list(map(int, input().split()))
     print(greater_than_neighb(seq1))
@@ -26,3 +31,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# to start tests replace main() call by 
+# tests(greater_than_neighb) in the last line of code
