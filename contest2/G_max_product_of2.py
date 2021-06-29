@@ -53,16 +53,16 @@ def main():
 def tests(algo):
     assert algo([4, 3, 5, 2, 5]) == [5, 5], "WA :("
     assert algo([-4, 3, -5, 2, 5]) == [-5, -4], "WA :("
-    assert algo(seq) == [29710, 29793], "WA :("
     assert algo([1, 0]) == [0, 1], "WA :("
     assert algo([-6, -5, 20]) == [-6, -5], "WA :("
     f = open("G/input3.txt", "r")
     seq = [int(i) for i in next(f).strip().split()]
     f.close()
+    assert algo(seq) == [29710, 29793], "WA :("
 
 
 if __name__ == "__main__":
-    main()
+    tests(find_product_of2max)
 
 # to launch the tests replace main() call by
 # tests(find_product_of2max) call
