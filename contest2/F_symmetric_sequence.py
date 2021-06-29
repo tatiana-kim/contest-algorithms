@@ -33,19 +33,15 @@ def main():
     	print(*b)
 
 
+def tests(algo):
+    assert algo([1, 2, 3, 4, 5, 4, 3, 2, 1]) == (0, []), "WA :("
+    assert algo([1, 2, 3, 4, 5]) == (4, [4, 3, 2, 1]), "WA :("
+    assert algo([1, 2, 1, 2, 2]) == (3, [1, 2, 1]), "WA :("
+    assert algo([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2]) == (10, [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]), "WA :("
+
+
 if __name__ == "__main__":
     main()
 
-
-"""
-def main_file_input():
-    f = open("F/input8.txt", "r")
-    next(f)
-    seq1 = [int(i) for i in next(f).strip().split()]  # 32 ... 
-    f.close()
-    a, b = symmetric_seq(seq1)
-    print(a)
-    if a != 0:
-        print(*b)
-
-"""
+# to launch the tests replace main() call
+# by tests(symmetric_seq) call
