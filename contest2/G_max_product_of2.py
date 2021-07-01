@@ -14,7 +14,7 @@ G. Наибольшее произведение двух чисел
 Решение должно иметь сложность O(n), где n - размер списка.
 """
 
-def find_product_of2max(a):
+def find_maxproduct_of2(a):
     max1 = max2 = min1 = min2 = 0
     if len(a) == 2:
         return sorted(a)
@@ -47,7 +47,7 @@ def find_product_of2max(a):
 
 def main():
     seq = list(map(int, input().split()))
-    print(*find_product_of2max(seq))
+    print(*find_maxproduct_of2(seq))
 
 
 def tests(algo):
@@ -62,7 +62,7 @@ def tests(algo):
 
 
 if __name__ == "__main__":
-    tests(find_product_of2max)
+    tests(find_maxproduct_of2)
 
 # to launch the tests replace main() call by
-# tests(find_product_of2max) call
+# tests(find_maxproduct_of2) call
