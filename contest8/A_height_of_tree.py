@@ -31,7 +31,6 @@ class Node:
             right = self.get_height(root.right)
         return max(left, right) + 1
 
-    
 
 def insert(root, x):
     # if BTS is empty (root doesn't exist yet)
@@ -62,7 +61,7 @@ def main_stdin():
     while number != 0:
         root = insert(root, number)
         number = int(input())
-    print(root.get_height(root))
+    print(root.get_height(root))                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
 
 
 def main():
@@ -75,4 +74,22 @@ def main():
     print(root.get_height(root))
 
 
-main()
+def test(algo):
+    numbers = [7, 3, 2, 1, 9, 5, 4, 6, 8]
+    root = Node(numbers[0])
+    for i in range(1, len(numbers) - 1):
+        root = insert(root, numbers[i])
+    assert root.algo(root) == 2, "WA :("
+    print("Test1: Ok")
+
+
+if __name__ == "__main__":
+    # main()
+    test(Node.get_height)
+
+# 2 1 3 0  # answer: 2
+
+"""
+arr = [7, 3, 2, 1, 9, 5, 4, 6, 8]
+7 3 2 1 9 5 4 6 8 0  # answer: 4
+"""
