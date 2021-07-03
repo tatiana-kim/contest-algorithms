@@ -22,6 +22,24 @@ def find_min_diff_btwn_shortspents(shorts, pents):
     return minshorts, minpents
 
 
+def tests(algo):
+	shorts = [3, 4]
+	pents = [1, 2, 3]
+	assert algo(shorts, pents) == (3, 3), "WA :("
+
+	shorts = [4, 5]
+	pents = [1, 2, 3]
+	assert algo(shorts, pents) == (4, 3), "WA :("
+
+	shorts = [1, 2, 3, 4, 5]
+	pents = [1, 2, 3, 4, 5]
+	assert algo(shorts, pents) == (1, 1), "WA :("
+
+	shorts = [1, 2, 3, 4, 100000]
+	pents = [100, 101, 102, 103, 104, 105, 106, 107, 108, 99949]
+	assert algo(shorts, pents) == (100000, 99949), "WA :("
+
+
 def main():
     n = int(input())
     shorts = [int(i) for i in input().split()]  # 3 4
@@ -32,23 +50,6 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-"""
-5
-1 2 3 4 100000
-10
-100 101 102 103 104 105 106 107 108 99949
-
-# shorts = [3, 4]
-# pents = [1, 2, 3]  # 3 3
-
-# shorts = [4, 5]
-# pents = [1, 2, 3]  # 4 3
-
-# shorts = [1, 2, 3, 4, 5]
-# pents = [1, 2, 3, 4, 5]  # 1 1
-"""
 
 """
 About commented lines:
@@ -61,3 +62,5 @@ if minval == 0:
  похожих на реальные. в учебных задачах худший случай обязательно
  будет
  """
+
+# to launch tests: tests(find_min_diff_btwn_shortspents)
