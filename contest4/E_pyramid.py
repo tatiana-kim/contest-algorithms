@@ -1,4 +1,19 @@
-# E_pyramid.py
+n = int(input())
+
+choosed_blocks = {}  # only different widths having the maximum heights
+for i in range(n):
+    width, height = list(map(int, input().split()))
+    if width in choosed_blocks:
+        choosed_blocks[width] = max(choosed_blocks[width], height)
+    else:
+    	choosed_blocks[width] = height
+
+answer = sum(choosed_blocks.values())
+print(answer)
+
+
+#----------------------------------------
+# sample inputs:
 """
 3
 3 1
@@ -18,23 +33,9 @@
 93 62
 99 34
 """
-n = int(input())
-# blocks_params = [list(map(int, input().split())) for i in range(n)]
-
-choosed_blocks = {}  # only different widths having the maximum heights
-for i in range(n):
-    width, height = list(map(int, input().split()))
-    if width in choosed_blocks:
-        choosed_blocks[width] = max(choosed_blocks[width], height)
-    else:
-    	choosed_blocks[width] = height
-
-# answer = sum([j for i, j in choosed_blocks.items()])
-answer = sum(choosed_blocks.values())
-print(answer)
 
 #----------------------------------------
-# from stackoverflow
+# solution from stackoverflow:
 # d = {}
 
 # for a in range(int(input())):
