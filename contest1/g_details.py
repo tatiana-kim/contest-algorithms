@@ -1,6 +1,5 @@
 # using recursion
 
-# g_details.py
 # n: kg of alloy we have in total in the begining
 # k: kg for one piece of blank
 # m: kg for one piece of product
