@@ -1,5 +1,9 @@
-# about float unpresision
+# about float unpresision:
 # https://qastack.ru/programming/21895756/why-are-floating-point-numbers-inaccurate
+# so
+# TODO: change the way to solve this task
+# reason: its not good to use the float number
+
 from decimal import Decimal, getcontext
 getcontext().prec = 20
 

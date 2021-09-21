@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// TODO: change the way to solve this task
+// reason: its not good to use the float numbers
 
 int main()
 {
     long long a, b, c;
-    FILE* in_file = fopen("E/input.txt", "r"); // read only  
+    FILE* in_file = fopen("E/input.txt", "r");
 
-    if (!in_file ) // equivalent to saying if ( in_file == NULL ) 
+    if (!in_file )
     {  
         printf("oops, file can't be read\n"); 
         exit(-1); 
